@@ -4,7 +4,7 @@ import {
   HostBinding
 } from '@angular/core';
 
-import { Recipe } from '../../recipe.model'
+import { Recipe } from '../../_models/recipe.model'
 
 @Component({
   selector: 'recipe-column',

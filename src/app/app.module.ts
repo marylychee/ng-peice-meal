@@ -1,19 +1,47 @@
-import { BrowserModule } from '@angular/platform-browser';
+// Angular imports
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { RecipesListComponent } from './components/recipes-list/recipes-list.component';
-import { RecipeImageComponent } from './components/recipe-image/recipe-image.component';
-import { RecipeColumnComponent } from './components/recipe-column/recipe-column.component';
-import { NewUserComponent } from './components/new-user/new-user.component';
-import { LogInComponent } from './components/log-in/log-in.component';
-import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
-import { RecipeSearchBarComponent } from './components/recipe-search-bar/recipe-search-bar.component';
+// Routing imports
+import { RouterModule, Routes } from '@angular/router';
+
+// Components for Recipes views
+import { RecipesListComponent } from './recipes/recipes-list/recipes-list.component';
+import { RecipeImageComponent } from './recipes/recipe-image/recipe-image.component';
+import { RecipeColumnComponent } from './recipes/recipe-column/recipe-column.component';
+import { RecipeSearchBarComponent } from './recipes/recipe-search-bar/recipe-search-bar.component';
+
+// NavBar and Footer Components
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+
+// Main Components
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './_guards/index'
+
+// const routes: Routes = [
+//
+//  { path: '', redirectTo: 'home', pathMatch: 'full' },
+//  { path: 'home', component: HomeComponent },
+//  { path: 'login', component: LoginComponent },
+//  { path: 'register', component: RegisterComponent }
+//
+//  // authentication demo
+//  {
+//  {
+//
+//
+//  },
+//
+//  {
+//  path: 'recipes',
+//  component: RecipesListComponent,
+//  children: childRoutes
+//  }
+// ]
 
 @NgModule({
   declarations: [
@@ -33,7 +61,9 @@ import { RegisterComponent } from './register/register.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModules.forRoot(routes),
+    RecipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,7 +6,7 @@ import {
   Output
 } from '@angular/core';
 
-import { Recipe } from '../../recipe.model';
+import { Recipe } from '../../_models/recipe.model'
 
 @Component({
   selector: 'recipes-list',
