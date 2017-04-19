@@ -1,0 +1,64 @@
+<div class="ui middle aligned center aligned grid">
+<div class="column">
+  <h2>Sign Up</h2>
+  <div class="ui raised segment">
+    <div [hidden]="submitted">
+        <form
+            (ngSubmit)="onSubmit()" #newUserForm="ngForm"
+            class="ui form css-form">
+
+          <div class="field">
+            <label for="firstName">First Name: </label>
+            <input
+                  type="text" id="firstName"
+                  required
+                  [(ngModel)]="model.firstName" name="firstName"
+                  #firstName="ngModel">
+            <div [hidden]="firstName.valid || firstName.pristine"
+                   class="alert alert-danger">
+                First Name is required
+            </div>
+          </div>
+          <div class="field">
+            <label for="lastName">Last Name: </label>
+            <input
+                  type="text" id="lastName"
+                  required
+                  [(ngModel)]="model.lastName" name="lastName"
+                  #lastName="ngModel">
+            <div [hidden]="lastName.valid || lastName.pristine"
+                   class="alert alert-danger">
+                Last Name is required
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email: </label>
+            <input
+                  type="text" id="email"
+                  required
+                  [(ngModel)]="model.email" name="email"
+                  #email="ngModel">
+            <div [hidden]="email.valid || email.pristine"
+                   class="alert alert-danger">
+                Email is required
+            </div>
+          </div>
+          <div class="field">
+            <label for="password">Password: </label>
+            <input
+                  type="text"
+                  id="password"
+                  [(ngModel)]="model.password" name="password"
+                  #password="ngModel"
+                  required>
+            <div [hidden]="password.valid || password.pristine"
+                   class="alert alert-danger">
+                Password is required
+            </div>
+          </div>
+          <button type="submit" class="ui button" (click)="createUser(); newUserForm.reset()" [disabled]="!newUserForm.form.valid">Log in</button>
+        </form>
+    </div>
+  </div>
+</div>
+</div>
